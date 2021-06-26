@@ -560,7 +560,7 @@ def dsq_main():
         try :
             _x_session = PromptSession(lexer=PygmentsLexer(PythonLexer), completer=_x_word_completer)
         except :
-            print_err("[qic]$ WARN: word completion disabled on combination of {}/{}".format(sys.platform,os.environ.get("TERM")),lvl=2)
+            print_err("[qic] $ WARN: word completion disabled on combination of {}/{}".format(sys.platform,os.environ.get("TERM")),lvl=2)
             _x_session = None
         _x_dotkey = True
         _x_history = deque(maxlen=200)
@@ -573,9 +573,9 @@ def dsq_main():
             err=""
             try :
                 if _x_session :
-                    _x_sin = _x_session.prompt('[qic]$ ')
+                    _x_sin = _x_session.prompt('[qic] $ ')
                 else :
-                    _x_sin = input('[qic]$ ')
+                    _x_sin = input('[qic] $ ')
             except KeyboardInterrupt:
                 continue
             except EOFError :
