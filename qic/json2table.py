@@ -6,7 +6,7 @@ import argparse
 import os
 import json
 import traceback
-from qic import SimpleTable
+from .tblfmt import SimpleTable
 
 def prepare_table(xjson,xheader=None) :
     header=list()

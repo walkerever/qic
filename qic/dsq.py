@@ -10,9 +10,9 @@ import time
 import random
 import string
 from functools import partial
-from qic import SimpleTable
-from qic import commandline
-from qic import prepare_table
+from .tblfmt import SimpleTable
+from .commandline import commandline
+from .json2table import prepare_table
 from collections import (deque,defaultdict)
 from types import FunctionType
 from pygments import highlight
