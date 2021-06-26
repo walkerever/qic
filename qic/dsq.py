@@ -579,6 +579,7 @@ def dsq_main():
             except KeyboardInterrupt:
                 continue
             except EOFError :
+                print_err("# IO Error. Pipeline intput is not supported in interactive mode, pls use (-f).",lvl=3)
                 break
             if not _x_sin :
                 continue

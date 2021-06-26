@@ -10,7 +10,7 @@ README = (HERE / "README.md").read_text()
 # This call to setup() does all the work
 setup(
     name="qic",
-    version="1.0.16",
+    version="1.0.17",
     description="data(JSON/XML/YAML) command line query tools with interactive mode.",
     long_description=README,
     long_description_content_type="text/markdown",
