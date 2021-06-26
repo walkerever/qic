@@ -1,0 +1,4 @@
+dist/
+upload2pypi
+*pycache*
+*.pyc
