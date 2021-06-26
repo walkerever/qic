@@ -10,7 +10,7 @@ import copy
 from wcwidth import wcswidth
 from collections import defaultdict
 from itertools import zip_longest
-from .commandline import commandline
+from qic import commandline
 
 
 class SimpleTable:
