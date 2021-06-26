@@ -1,4 +1,9 @@
 dist/
+build/
 upload2pypi
 *pycache*
 *.pyc
+doc/images/.DS_Store
+qic.egg-info/
+tmp/
+*.spec
