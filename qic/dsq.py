@@ -129,6 +129,8 @@ def dsq_main():
         return bcolors.WARNING + s + bcolors.ENDC
     def notify(s) :
         return bcolors.OKCYAN + s + bcolors.ENDC
+    def critical(s) :
+        return bcolors.FAIL + s + bcolors.ENDC
     def print_err(s,lvl=0) :
         if lvl == 1 :
             print(notify(s),file=sys.stderr)
