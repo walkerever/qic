@@ -81,6 +81,15 @@ echo "test/s6.json" && cat test/s6.json | head -35 && sleep 5
 eval "$clearscr";title="dump user tables"
 echo $nnn; (( nnn = nnn + 1 )) ;   echo $title;  sleep $titletime; set -x; 
 cat test/s6.json  | python -mqic "_l2t(_.users)"
-set +x; 
+set +x; sleep $interval;
 
-
+eval "$clearscr";title="convert JSON to YAML or XML. please be noted, YAML or XML is also valid source for qic, just specify -t YAML or -t XML."
+echo $nnn; (( nnn = nnn + 1 )) ;   echo $title;  sleep $titletime; set -x; 
+echo "# JSON"
+cat test/s6.json 
+sleep $interval &&  eval "$clearscr"
+echo "# to YAML"
+cat test/s6.json  | python -mqic _y 
+sleep $interval &&  eval "$clearscr"
+echo "# to XML"
+cat test/s6.json  | python -mqic _x 
