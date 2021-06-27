@@ -275,6 +275,25 @@ def dsq_main():
                 except :
                     print(str(res))
 
+    def log_special(code) :
+        ret = dict()
+        if not code :
+            return (code,ret)
+        if not ("<" in code and ">" in code) :
+            return (code,ret)
+        m = re.search(r"\<\s*([^\<\>]+?)\s*\>",code) 
+        while m :
+            full = m.group(0)
+            tokeep = m.group(1)
+            special = "".join([random.choice(string.ascii_lowercase) for _ in range(10)])
+            code = code.replace(full,special)
+            ret[special] = tokeep
+            if _x_args.debug > 2:
+                print("# [passwd] {} -> {}".format(tokeep,special))
+            m = re.search(r"\<\s*([^\<\>]+?)\s*\>",code) 
+        return (code, ret)
+            
+
     def choiceexpand(code) :
         if not code :
             return code
@@ -293,37 +312,6 @@ def dsq_main():
             print("# [choice] before = ",code)
             print("# [choice] after  = ",res)
         return res
-
-#    def insert_spaces_helper(code) :
-#        xcode = code
-#        res = ""
-#        _x_m1 = re.search(r"(\w+)\((\S*?\[\]\S*?)\)",xcode,re.DOTALL)
-#        _x_m2 = re.search(r"(\w+)\(\s+(\S*?\[\]\S*?)\)",xcode,re.DOTALL)
-#        _x_m3 = re.search(r"(\w+)\((\S*?\[\]\S*?)\s+\)",xcode,re.DOTALL)
-#        m = _x_m1 or _x_m2 or _x_m3
-#        if m :
-#            before = xcode[:m.start()]
-#            end = xcode[m.end():]
-#            func = m.group(1)
-#            para = m.group(2)
-#            chain = func + "( " + para + " )"
-#            res = before + chain + end 
-#            return res
-#        else :
-#            return code
-#    def insert_spaces(code) :
-#        oldres=""
-#        res=code
-#        while True :
-#            res=insert_spaces_helper(res)
-#            if res == oldres :
-#                break
-#            else :
-#                oldres = res
-#        if _x_args.debug > 2:
-#            print("# [ spce ] before = ",code)
-#            print("# [ spce ] after  = ",res)
-#        return res
 
     def insert_spaces(code) :
         return code.replace("(","( ").replace(")"," )")
@@ -362,14 +350,6 @@ def dsq_main():
             before = chgsin[:_x_m.start()]
             end = chgsin[_x_m.end():]
             chain = _x_m.group(0)
-            if chain.startswith("{") and chain.endswith("}") :
-                if res :
-                    res += before[:-1] + "['" + chain[1:-1] + "']"
-                else :
-                    res += before + chain[1:-1] 
-                chgsin = end
-                _x_m = re.search(r"\{(\w|\.)+\}|(\w+|\]|\))(\.\w+|\.\+\w+)+",chgsin,re.DOTALL)
-                continue
             newchain = ""
             words = chain.split(".") 
             for i,w in enumerate(words) :
@@ -410,10 +390,14 @@ def dsq_main():
         if not code :
             return
         code = code.replace("\\n","\n")
+        code,passbook = log_special(code)
         code = listexpand(code)
         code = choiceexpand(code)
         code = dotexpand(code,_x_key_dict)
         code = code.replace(DSQ_DOT,".")
+        if passbook :
+            for k,v in passbook.items() :
+                code = code.replace(k,v)
         if _x_args.debug:
             print_err("# run : ",lvl=1)
             print_err(code)
