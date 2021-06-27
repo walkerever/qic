@@ -22,7 +22,7 @@ setup(
     packages=find_packages(),
     include_package_data=True,
     install_requires=[ "wcwidth", "pyyaml", "xmltodict", "dicttoxml", "pygments", "prompt_toolkit", ],
-    keywords=[ "jq", "dq", "dsq", "dsquery","qic", "dataquery", "json query", "xml query", "yaml query", "jello", "jq", ],
+    keywords=[ "json","yaml","xml","query","jq", "dq", "dsq", "dsquery","qic", "dataquery", "json query", "xml query", "yaml query", "jello", "jq", ],
     entry_points={ "console_scripts": 
         [ 
             "qic=qic:dsq_main", 
