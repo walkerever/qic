@@ -275,6 +275,20 @@ def dsq_main():
                 except :
                     print(str(res))
 
+    def removespaces(code) :
+        if not code or "{" not in code or "}" not in code :
+            return code
+        xcode = code
+        m = re.search(r"\{.*?\s+.*?\}",xcode) 
+        while m :
+            before = code[:m.start()]
+            end = code[m.end():]
+            chain = m.group(0)
+            newchain = re.sub(r"\s+","",chain)
+            xcode = before + newchain + end
+            m = re.search(r"\{.*?\s+.*?\}",xcode) 
+        return xcode
+        
     def log_special(code) :
         ret = dict()
         if not code :
@@ -297,7 +311,7 @@ def dsq_main():
     def choiceexpand(code) :
         if not code :
             return code
-        m = re.search(r"((\w|\.|\[|\]|\(|\))+?)\.\{(\S+?(,\S+?)*)\}",code)
+        m = re.search(r"((\w|\.|\[|\]|\(|\))+?)\.\{\s*(\S+?\s*(,\s*\S+?)*)\s*\}",code)
         if not m :
             return code
         if code.count("{") > 1 :
@@ -307,6 +321,7 @@ def dsq_main():
         end = code[m.end():]
         dt = m.group(1)
         keys = m.group(3)
+        print(keys)
         res = before + "{" + ",".join(["'{}'".format(k.replace(".",DSQ_DOT))  + ":" + "{}.{}".format(dt,k) for k in keys.split(",")]) + "}" + end
         if _x_args.debug > 2:
             print("# [choice] before = ",code)
@@ -390,6 +405,7 @@ def dsq_main():
         if not code :
             return
         code = code.replace("\\n","\n")
+        code = removespaces(code)
         code,passbook = log_special(code)
         code = listexpand(code)
         code = choiceexpand(code)

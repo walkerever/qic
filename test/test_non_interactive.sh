@@ -102,4 +102,7 @@ cat test/s6.json | python -mqic -s
 set +x; sleep $interval;
 
 
-
+eval "$clearscr";title="select keys"
+echo $nnn; (( nnn = nnn + 1 )) ;   echo $title;  sleep $titletime; set -x; 
+python3 -mqic -f test/s6.json "_.users[].{ userid   ,firstname, lastname }"
+set +x; sleep $interval;
