@@ -449,22 +449,29 @@ def dsq_main():
                 attempts += 1
                 continue
 
+    INPUT = None
     if _x_args.infile:
         if not os.path.isfile(_x_args.infile):
             print_err("# {} not exists.".format(_x_args.infile),lvl=2)
         with open(_x_args.infile, "r") as f:
             INPUT = f.read()
-    else:
-        INPUT = sys.stdin.read()
+            INPUT = INPUT.strip()
+    else : 
+        if not _x_args.interactive :
+            print_err("# Waiting input from stdin. Type or paste below. Use CTL+D to end.")
+            print_err("# To see options, use -h/--help.")
+            INPUT = sys.stdin.read()
+            INPUT = INPUT.strip()
+    if not INPUT :
+        INPUT = json.dumps({})
+
     if _x_args.debug >= 3 :
         print_err("# INPUT :",lvl=1)
         print_err(INPUT)
 
-    INPUT = INPUT.strip()
     if not _x_args.keepcolor :
         INPUT = re.sub(r'(\x9B|\x1B\[)[0-?]*[ -\/]*[@-~]',"",INPUT)
-    if not INPUT :
-        INPUT = json.dumps({})
+
 
     try :
        if _x_args.srctype.upper() == "JSON" :
