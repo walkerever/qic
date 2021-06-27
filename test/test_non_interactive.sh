@@ -106,3 +106,28 @@ eval "$clearscr";title="select keys"
 echo $nnn; (( nnn = nnn + 1 )) ;   echo $title;  sleep $titletime; set -x; 
 python3 -mqic -f test/s6.json "_.users[].{ userid   ,firstname, lastname }"
 set +x; sleep $interval;
+
+
+eval "$clearscr";title="slices"
+echo $nnn; (( nnn = nnn + 1 )) ;   echo $title;  sleep $titletime; set -x; 
+cat test/s6.json  | python -mqic "_.users[1:3].{firstname,lastname}"
+echo $nnn; (( nnn = nnn + 1 )) ;   echo $title;  sleep $titletime; set -x; 
+cat test/s6.json  | python -mqic "_.users[1:3].{firstname,lastname}"
+echo $nnn; (( nnn = nnn + 1 )) ;   echo $title;  sleep $titletime; set -x; 
+cat test/s6.json  | python -mqic "_.users[1:].{firstname,lastname}"
+echo $nnn; (( nnn = nnn + 1 )) ;   echo $title;  sleep $titletime; set -x; 
+cat test/s6.json  | python -mqic "_.users[:3].{firstname,lastname}"
+echo $nnn; (( nnn = nnn + 1 )) ;   echo $title;  sleep $titletime; set -x; 
+cat test/s6.json  | python -mqic "_.users[:].{firstname,lastname}"
+set +x; sleep $interval;
+
+
+
+
+
+
+
+
+
+
+

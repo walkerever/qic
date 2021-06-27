@@ -332,25 +332,33 @@ def dsq_main():
         return code.replace("(","( ").replace(")"," )")
 
     def listexpand(code) :
-        if not code or "[]" not in code :
+        def hasslice(code) :
+            if re.search(r"\[(\d|\:|\-)*\]",code) and not re.search(r"\[(\d|\-)+\]",code) :
+                return True
+            return False
+        if not code or not hasslice(code) :
             return code
         def listexpand_helper(code) :
-            if "[]" not in code :
+            if not hasslice(code) :
                 return code
             xcode = code
             tvar = "_" + "".join([random.choice(string.ascii_lowercase) for _ in range(3)])
-            l,x = xcode.split("[]",1)
-            return "[ {} for {} in {} ]".format(listexpand_helper(tvar+x),tvar,l)
+            #l,x = xcode.split("[]",1)
+            m = re.match(r"(.*?)(\[(\d|\:|\-)*\])(.*)",code)
+            b,i,a = m.group(1),m.group(2),m.group(4)
+            if i in [ "[]", "[:]" ] :
+                i=""
+            return "[ {} for {} in {} ]".format(listexpand_helper(tvar+a),tvar,b+i)
         res = ""
         xcode = insert_spaces(code)
-        _x_m = re.search(r"\S*\[\]\S*",xcode,re.DOTALL)
+        _x_m = re.search(r"\S*\[(\d|\:|\-)*\]\S*",xcode,re.DOTALL)
         while _x_m :
             before = xcode[:_x_m.start()]
             end = xcode[_x_m.end():]
             chain = _x_m.group(0)
             res += before + listexpand_helper(chain)
             xcode = end
-            _x_m = re.search(r"\S*\[\]\S*",xcode,re.DOTALL)
+            _x_m = re.search(r"\S*\[(\d|\:|\-)*\]\S*",xcode,re.DOTALL)
         res += xcode
         if _x_args.debug > 2:
             print("# [ list ] before = ",code)
