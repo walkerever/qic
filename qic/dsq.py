@@ -107,6 +107,7 @@ def dsq_main():
     parser.add_argument("-E", "--nokeys", dest="keys_excluded", help="these keys should be excluded.")
     parser.add_argument("-F", "--functionize", dest="func", action="store_true", default=False, help="wrap code into an internal function",)
     parser.add_argument("-s", "--rawstr", dest="rawstr", action="store_true", default=False, help="output raw stings for easy grep",)
+    parser.add_argument("-o", "--origin", dest="origin", action="store_true", default=False, help="run input as is. no expanding.")
     parser.add_argument("-I", "--interactive", dest="interactive", action="store_true", default=False, help="interactive mode",)
     parser.add_argument("-p", "--plain", dest="plain", action="store_true", default=False, help="force no color code",)
     parser.add_argument("-c", "--compact", dest="compact", action="store_true", default=False, help="dump data structure in compact mode",)
@@ -412,16 +413,17 @@ def dsq_main():
         _ = data
         if not code :
             return
-        code = code.replace("\\n","\n")
-        code = removespaces(code)
-        code,passbook = log_special(code)
-        code = listexpand(code)
-        code = choiceexpand(code)
-        code = dotexpand(code,_x_key_dict)
-        code = code.replace(DSQ_DOT,".")
-        if passbook :
-            for k,v in passbook.items() :
-                code = code.replace(k,v)
+        if not _x_args.origin :
+            code = code.replace("\\n","\n")
+            code = removespaces(code)
+            code,passbook = log_special(code)
+            code = listexpand(code)
+            code = choiceexpand(code)
+            code = dotexpand(code,_x_key_dict)
+            code = code.replace(DSQ_DOT,".")
+            if passbook :
+                for k,v in passbook.items() :
+                    code = code.replace(k,v)
         if _x_args.debug:
             print_err("# run : ",lvl=1)
             print_err(code)
