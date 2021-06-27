@@ -458,8 +458,6 @@ def dsq_main():
             INPUT = INPUT.strip()
     else : 
         if not _x_args.interactive :
-            print_err("# Waiting input from stdin. Type or paste below. Use CTL+D to end.")
-            print_err("# To see options, use -h/--help.")
             INPUT = sys.stdin.read()
             INPUT = INPUT.strip()
     if not INPUT :
