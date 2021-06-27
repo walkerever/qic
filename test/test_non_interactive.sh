@@ -93,3 +93,13 @@ cat test/s6.json  | python -mqic _y
 sleep $interval &&  eval "$clearscr"
 echo "# to XML"
 cat test/s6.json  | python -mqic _x 
+set +x; sleep $interval;
+
+
+eval "$clearscr";title="dump data structure in a 'flat' way. could be eaiser to grep."
+echo $nnn; (( nnn = nnn + 1 )) ;   echo $title;  sleep $titletime; set -x; 
+cat test/s6.json | python -mqic -s
+set +x; sleep $interval;
+
+
+
