@@ -321,7 +321,7 @@ def dsq_main():
         end = code[m.end():]
         dt = m.group(1)
         keys = m.group(3)
-        print(keys)
+        #print(keys)
         res = before + "{" + ",".join(["'{}'".format(k.replace(".",DSQ_DOT))  + ":" + "{}.{}".format(dt,k) for k in keys.split(",")]) + "}" + end
         if _x_args.debug > 2:
             print("# [choice] before = ",code)
