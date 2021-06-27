@@ -123,6 +123,15 @@ set +x; sleep $interval;
 
 
 
+eval "$clearscr";title="slices special situation"
+echo $nnn; (( nnn = nnn + 1 )) ;   echo $title;  sleep $titletime; set -x; 
+cat test/s6.json  | python -mqic "_.users[1: 2   ].{firstname,lastname}"
+echo $nnn; (( nnn = nnn + 1 )) ;   echo $title;  sleep $titletime; set -x; 
+cat test/s6.json  | python -mqic "_.users[-1].{firstname,lastname}" 
+set +x; sleep $interval;
+
+
+
 
 
 
