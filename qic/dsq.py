@@ -102,12 +102,13 @@ def dsq_main():
     parser.add_argument("-t", "--srctype", dest="srctype", default="JSON", help="JSON,YAML or XML")
     parser.add_argument("-i", "--indent", dest="indent", default=4, help="how many spaces for indent. default 4.")
     parser.add_argument("-l", "--rows", dest="rows",type=int, default=2**30, help="use this to shrink each list included. useful for DS including too many records.")
+    parser.add_argument("-o", "--output", dest="outfile",default=None,help="write as well as console. ansi color kept.")
     parser.add_argument("-m", "--modules", dest="modules", help="import modules.")
     parser.add_argument("-K", "--keys", dest="keys_included", help="only keep these keys.")
     parser.add_argument("-E", "--nokeys", dest="keys_excluded", help="these keys should be excluded.")
     parser.add_argument("-F", "--functionize", dest="func", action="store_true", default=False, help="wrap code into an internal function",)
     parser.add_argument("-s", "--rawstr", dest="rawstr", action="store_true", default=False, help="output raw stings for easy grep",)
-    parser.add_argument("-o", "--origin", dest="origin", action="store_true", default=False, help="run input as is. no expanding.")
+    parser.add_argument("-n", "--origin", dest="origin", action="store_true", default=False, help="no change to the input stream and take it as is. no expanding.")
     parser.add_argument("-I", "--interactive", dest="interactive", action="store_true", default=False, help="interactive mode",)
     parser.add_argument("-p", "--plain", dest="plain", action="store_true", default=False, help="force no color code",)
     parser.add_argument("-c", "--compact", dest="compact", action="store_true", default=False, help="dump data structure in compact mode",)
@@ -222,59 +223,71 @@ def dsq_main():
             pass
 
     def show_result(res) :
+        def print_tee(s) :
+            if _x_args.outfile :
+                with open(_x_args.outfile,"a") as fw :
+                    fw.write(s)
+            print(s)
+        if _x_args.outfile :
+            with open(_x_args.outfile,"w") as fw :
+                pass
+            xprint = print_tee
+        else :
+            xprint = print
+
         if not res :
            return
         if type(res) is str :
             if _x_args.plain :
-                print(res) 
+                xprint(res) 
                 return
             try :
                 if _x_args.rawstr :
-                    print(highlight(res,IniLexer(),Terminal256Formatter()))
+                    xprint(highlight(res,IniLexer(),Terminal256Formatter()))
                     return
             except :
                 pass
             try :
                 json.loads(res)
-                print(highlight(res,JsonLexer(),Terminal256Formatter()))
+                xprint(highlight(res,JsonLexer(),Terminal256Formatter()))
                 return
             except :
                 pass
             try :
                 yaml.safe_load(res)
-                print(highlight(res,YamlLexer(),Terminal256Formatter()))
+                xprint(highlight(res,YamlLexer(),Terminal256Formatter()))
                 return
             except :
                 pass
             try :
                 xmltodict.parse(res)
-                print(highlight(res,XmlLexer(),Terminal256Formatter()))
+                xprint(highlight(res,XmlLexer(),Terminal256Formatter()))
                 return
             except :
                 pass
-            print(highlight(res,guess_lexer(res),Terminal256Formatter()))
+            xprint(highlight(res,guess_lexer(res),Terminal256Formatter()))
         else :
             res = cutkeys(res)
             res = shrink_list(res)
             if _x_args.rawstr :
                 if _x_args.plain :
-                    print(_rawstr(res))
+                    xprint(_rawstr(res))
                 else :
-                    print(highlight(_rawstr(res),IniLexer(),Terminal256Formatter()))
+                    xprint(highlight(_rawstr(res),IniLexer(),Terminal256Formatter()))
             else :
                 try :
                     if _x_args.plain :
                         if _x_args.compact :
-                            print(json.dumps(res))
+                            xprint(json.dumps(res))
                         else :
-                            print(json.dumps(res,indent=2))
+                            xprint(json.dumps(res,indent=2))
                     else :
                         if _x_args.compact :
-                            print(highlight(json.dumps(res),JsonLexer(),Terminal256Formatter()))
+                            xprint(highlight(json.dumps(res),JsonLexer(),Terminal256Formatter()))
                         else :
-                            print(highlight(json.dumps(res,indent=2),JsonLexer(),Terminal256Formatter()))
+                            xprint(highlight(json.dumps(res,indent=2),JsonLexer(),Terminal256Formatter()))
                 except :
-                    print(str(res))
+                    xprint(str(res))
 
     def removespaces(code) :
         if not code or "{" not in code or "}" not in code :

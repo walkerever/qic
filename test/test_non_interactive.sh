@@ -132,6 +132,13 @@ set +x; sleep $interval;
 
 
 
+eval "$clearscr";title="tee to output file. could be useful when want a text file with colored code. bash redirection cannot gurantee that."
+echo $nnn; (( nnn = nnn + 1 )) ;   echo $title;  sleep $titletime; set -x; 
+cat test/s1.json | python -mqic -o /tmp/x.txt 
+echo "sleep 2"
+cat /tmp/x.txt
+set +x; sleep $interval;
+
 
 
 
