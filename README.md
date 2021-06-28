@@ -21,8 +21,9 @@ run it
 
 ----
 ## Baiscs
-```
-(py3) [yonghang@mtp qic]$ cat test/s1.json
+
+
+(py3) [yonghang@mtp qic]$ cat test/s1.json \
 [{
   "_id": {
     "$oid": "5968dd23fc13ae04d9000001"
@@ -48,8 +49,8 @@ run it
   "quantity": 211,
   "unit_cost": "$20.53"
 }]
-(py3) [yonghang@mtp qic]$ 
-(py3) [yonghang@mtp qic]$ cat test/s1.json | qic 
+(py3) [yonghang@mtp qic]$ \
+(py3) [yonghang@mtp qic]$ cat test/s1.json | qic \
 [
   {
     "_id": {
@@ -79,4 +80,6 @@ run it
     "unit_cost": "$20.53"
   }
 ]
-```
+
+
+
