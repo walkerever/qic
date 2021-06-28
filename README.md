@@ -22,64 +22,39 @@ run it
 ----
 ## Baiscs
 
-
-(py3) [yonghang@mtp qic]$ cat test/s1.json \
-[{
-  "_id": {
-    "$oid": "5968dd23fc13ae04d9000001"
-  },
-  "product_name": "sildenafil citrate",
-  "supplier": "Wisozk Inc",
-  "quantity": 261,
-  "unit_cost": "$10.47"
-}, {
-  "_id": {
-    "$oid": "5968dd23fc13ae04d9000002"
-  },
-  "product_name": "Mountain Juniperus ashei",
-  "supplier": "Keebler-Hilpert",
-  "quantity": 292,
-  "unit_cost": "$8.74"
-}, {
-  "_id": {
-    "$oid": "5968dd23fc13ae04d9000003"
-  },
-  "product_name": "Dextromathorphan HBr",
-  "supplier": "Schmitt-Weissnat",
-  "quantity": 211,
-  "unit_cost": "$20.53"
-}]
-(py3) [yonghang@mtp qic]$ \
-(py3) [yonghang@mtp qic]$ cat test/s1.json | qic \
+<pre>(py3) [me@mtp qic]$ cat test/s1.json | qic 
 [
   {
-    "_id": {
-      "$oid": "5968dd23fc13ae04d9000001"
+    <font color="#008700"><b>&quot;_id&quot;</b></font>: {
+      <font color="#008700"><b>&quot;$oid&quot;</b></font>: <font color="#AF0000">&quot;5968dd23fc13ae04d9000001&quot;</font>
     },
-    "product_name": "sildenafil citrate",
-    "supplier": "Wisozk Inc",
-    "quantity": 261,
-    "unit_cost": "$10.47"
+    <font color="#008700"><b>&quot;product_name&quot;</b></font>: <font color="#AF0000">&quot;sildenafil citrate&quot;</font>,
+    <font color="#008700"><b>&quot;supplier&quot;</b></font>: <font color="#AF0000">&quot;Wisozk Inc&quot;</font>,
+    <font color="#008700"><b>&quot;quantity&quot;</b></font>: <font color="#626262">261</font>,
+    <font color="#008700"><b>&quot;unit_cost&quot;</b></font>: <font color="#AF0000">&quot;$10.47&quot;</font>
   },
   {
-    "_id": {
-      "$oid": "5968dd23fc13ae04d9000002"
+    <font color="#008700"><b>&quot;_id&quot;</b></font>: {
+      <font color="#008700"><b>&quot;$oid&quot;</b></font>: <font color="#AF0000">&quot;5968dd23fc13ae04d9000002&quot;</font>
     },
-    "product_name": "Mountain Juniperus ashei",
-    "supplier": "Keebler-Hilpert",
-    "quantity": 292,
-    "unit_cost": "$8.74"
+    <font color="#008700"><b>&quot;product_name&quot;</b></font>: <font color="#AF0000">&quot;Mountain Juniperus ashei&quot;</font>,
+    <font color="#008700"><b>&quot;supplier&quot;</b></font>: <font color="#AF0000">&quot;Keebler-Hilpert&quot;</font>,
+    <font color="#008700"><b>&quot;quantity&quot;</b></font>: <font color="#626262">292</font>,
+    <font color="#008700"><b>&quot;unit_cost&quot;</b></font>: <font color="#AF0000">&quot;$8.74&quot;</font>
   },
   {
-    "_id": {
-      "$oid": "5968dd23fc13ae04d9000003"
+    <font color="#008700"><b>&quot;_id&quot;</b></font>: {
+      <font color="#008700"><b>&quot;$oid&quot;</b></font>: <font color="#AF0000">&quot;5968dd23fc13ae04d9000003&quot;</font>
     },
-    "product_name": "Dextromathorphan HBr",
-    "supplier": "Schmitt-Weissnat",
-    "quantity": 211,
-    "unit_cost": "$20.53"
+    <font color="#008700"><b>&quot;product_name&quot;</b></font>: <font color="#AF0000">&quot;Dextromathorphan HBr&quot;</font>,
+    <font color="#008700"><b>&quot;supplier&quot;</b></font>: <font color="#AF0000">&quot;Schmitt-Weissnat&quot;</font>,
+    <font color="#008700"><b>&quot;quantity&quot;</b></font>: <font color="#626262">211</font>,
+    <font color="#008700"><b>&quot;unit_cost&quot;</b></font>: <font color="#AF0000">&quot;$20.53&quot;</font>
   }
 ]
+</pre>
+
+
 
 
 
