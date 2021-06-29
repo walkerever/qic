@@ -6,7 +6,7 @@ By design, it tries to keep simple. There're a lot compromises. It's not intendi
 
 This document is also available on github.io [QiC](https://laowangv5.github.io/qic/)
 
-[![watch a brief on youtube](https://github.com/laowangv5/qic/blob/master/doc/images/qic_eg_2.png)](http://www.youtube.com/watch?v=NBARRnsKnbk)
+[![watch a brief on youtube](https://n1.leonawang.com/share/images/qic_eg_2.png)](http://www.youtube.com/watch?v=NBARRnsKnbk)
 
 
 -----
