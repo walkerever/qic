@@ -4,7 +4,7 @@ JSON/YAML/XML comand line query tool with interactive mode.
 
 By design, it tries to keep simple. There're a lot compromises. It's not intending to embed a full syntax/sementic engine. For complicated situation, other than introducing very long single line expression, please try code blocks where you can use any python syntax.
 
-This document is also available on github.io [QiC](https://laowangv5.github.io/qic/)
+This document is available with better format on github.io [QiC](https://laowangv5.github.io/qic/) where colorful text can be used for terminal output.
 
 [![watch a brief on youtube](https://n1.leonawang.com/share/images/qic_eg_2.png)](http://www.youtube.com/watch?v=NBARRnsKnbk)
 
