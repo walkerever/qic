@@ -249,21 +249,36 @@ def dsq_main():
                 pass
             try :
                 json.loads(res)
+                if _x_args.rows != 2**30 :
+                    res = json.loads(res)
+                    res = shrink_list(res)
+                    res = json.dumps(res,indent=2,sort_keys=True)
                 xprint(highlight(res,JsonLexer(),Terminal256Formatter()))
                 return
             except :
                 pass
             try :
                 yaml.safe_load(res)
+                if _x_args.rows != 2**30 :
+                    res = yaml.safe_load(res)
+                    res = shrink_list(res)
+                    res = yaml.dump(res,default_flow_style=False,explicit_start=True, explicit_end=False)
                 xprint(highlight(res,YamlLexer(),Terminal256Formatter()))
                 return
             except :
                 pass
             try :
                 xmltodict.parse(res)
+                #if _x_args.rows != 2**30 :
+                #    res = xmltodict.parse(res)
+                #    print(json.dumps(res,indent=2))
+                #    res = shrink_list(res)
+                #    print(json.dumps(res,indent=2))
+                #    res = _xml(res)
                 xprint(highlight(res,XmlLexer(),Terminal256Formatter()))
                 return
             except :
+                traceback.print_exc()
                 pass
             xprint(highlight(res,guess_lexer(res),Terminal256Formatter()))
         else :

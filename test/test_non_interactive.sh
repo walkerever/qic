@@ -137,10 +137,15 @@ echo $nnn; (( nnn = nnn + 1 )) ;   echo $title;  sleep $titletime; set -x;
 cat test/s1.json | python -mqic -o /tmp/x.txt 
 echo "sleep 2"
 cat /tmp/x.txt
+rm -f /tmp/x.txt
 set +x; sleep $interval;
 
 
-
+eval "$clearscr";title="apply rows limit to _j and _y"
+echo $nnn; (( nnn = nnn + 1 )) ;   echo $title;  sleep $titletime; set -x; 
+cat test/s6.json | python -mqic  "_j"  -l2
+cat test/s6.json | python -mqic  "_y"  -l2
+set +x; sleep $interval;
 
 
 
