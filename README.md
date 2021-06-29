@@ -311,6 +311,202 @@ use `\q` or `quit()` to leave Qic.
 (py3) [me@mtp qic]$ 
 </pre>
 
+## Validate and Convert JSON/XML/YAML
+
+without any parameters, feed input into QiC and it will serve as a format validator ( plus foramatter, etc.). \
+
+`-t` specify source as JSON, YAML or XML. here all examples are from JSON format and `JSON` is the default type.  Choose the right one if you're going to working with YAML or XML.  \
+
+Internal function `_json` or `-j` will dump output as well formatted JSON and this is the default behaviour.   \
+
+`_yaml` or `_y` will dump well formatted YAML, while `_xml` or `_x` will dump well formatted XML.
+
+specify them in format of `_x($expr)`, if for full doc, say, `_x(_)`, just use `_x`.
+
+<pre>(py3) [me@mtp qic]$ qic -f test/s6.json  _x
+<font color="#AF8700">&lt;?xml version=&quot;1.0&quot; ?&gt;</font>
+<font color="#008700"><b>&lt;root&gt;</b></font>
+	<font color="#008700"><b>&lt;users</b></font> <font color="#878700">type=</font><font color="#AF0000">&quot;list&quot;</font><font color="#008700"><b>&gt;</b></font>
+		<font color="#008700"><b>&lt;item</b></font> <font color="#878700">type=</font><font color="#AF0000">&quot;dict&quot;</font><font color="#008700"><b>&gt;</b></font>
+			<font color="#008700"><b>&lt;userId</b></font> <font color="#878700">type=</font><font color="#AF0000">&quot;int&quot;</font><font color="#008700"><b>&gt;</b></font>1<font color="#008700"><b>&lt;/userId&gt;</b></font>
+			<font color="#008700"><b>&lt;firstName</b></font> <font color="#878700">type=</font><font color="#AF0000">&quot;str&quot;</font><font color="#008700"><b>&gt;</b></font>Krish<font color="#008700"><b>&lt;/firstName&gt;</b></font>
+			<font color="#008700"><b>&lt;lastName</b></font> <font color="#878700">type=</font><font color="#AF0000">&quot;str&quot;</font><font color="#008700"><b>&gt;</b></font>Lee<font color="#008700"><b>&lt;/lastName&gt;</b></font>
+			<font color="#008700"><b>&lt;phoneNumber</b></font> <font color="#878700">type=</font><font color="#AF0000">&quot;str&quot;</font><font color="#008700"><b>&gt;</b></font>123456<font color="#008700"><b>&lt;/phoneNumber&gt;</b></font>
+			<font color="#008700"><b>&lt;emailAddress</b></font> <font color="#878700">type=</font><font color="#AF0000">&quot;str&quot;</font><font color="#008700"><b>&gt;</b></font>krish.lee@learningcontainer.com<font color="#008700"><b>&lt;/emailAddress&gt;</b></font>
+		<font color="#008700"><b>&lt;/item&gt;</b></font>
+		<font color="#008700"><b>&lt;item</b></font> <font color="#878700">type=</font><font color="#AF0000">&quot;dict&quot;</font><font color="#008700"><b>&gt;</b></font>
+			<font color="#008700"><b>&lt;userId</b></font> <font color="#878700">type=</font><font color="#AF0000">&quot;int&quot;</font><font color="#008700"><b>&gt;</b></font>2<font color="#008700"><b>&lt;/userId&gt;</b></font>
+			<font color="#008700"><b>&lt;firstName</b></font> <font color="#878700">type=</font><font color="#AF0000">&quot;str&quot;</font><font color="#008700"><b>&gt;</b></font>racks<font color="#008700"><b>&lt;/firstName&gt;</b></font>
+			<font color="#008700"><b>&lt;lastName</b></font> <font color="#878700">type=</font><font color="#AF0000">&quot;str&quot;</font><font color="#008700"><b>&gt;</b></font>jacson<font color="#008700"><b>&lt;/lastName&gt;</b></font>
+			<font color="#008700"><b>&lt;phoneNumber</b></font> <font color="#878700">type=</font><font color="#AF0000">&quot;str&quot;</font><font color="#008700"><b>&gt;</b></font>123456<font color="#008700"><b>&lt;/phoneNumber&gt;</b></font>
+			<font color="#008700"><b>&lt;emailAddress</b></font> <font color="#878700">type=</font><font color="#AF0000">&quot;str&quot;</font><font color="#008700"><b>&gt;</b></font>racks.jacson@learningcontainer.com<font color="#008700"><b>&lt;/emailAddress&gt;</b></font>
+		<font color="#008700"><b>&lt;/item&gt;</b></font>
+		<font color="#008700"><b>&lt;item</b></font> <font color="#878700">type=</font><font color="#AF0000">&quot;dict&quot;</font><font color="#008700"><b>&gt;</b></font>
+			<font color="#008700"><b>&lt;userId</b></font> <font color="#878700">type=</font><font color="#AF0000">&quot;int&quot;</font><font color="#008700"><b>&gt;</b></font>3<font color="#008700"><b>&lt;/userId&gt;</b></font>
+			<font color="#008700"><b>&lt;firstName</b></font> <font color="#878700">type=</font><font color="#AF0000">&quot;str&quot;</font><font color="#008700"><b>&gt;</b></font>denial<font color="#008700"><b>&lt;/firstName&gt;</b></font>
+			<font color="#008700"><b>&lt;lastName</b></font> <font color="#878700">type=</font><font color="#AF0000">&quot;str&quot;</font><font color="#008700"><b>&gt;</b></font>roast<font color="#008700"><b>&lt;/lastName&gt;</b></font>
+			<font color="#008700"><b>&lt;phoneNumber</b></font> <font color="#878700">type=</font><font color="#AF0000">&quot;str&quot;</font><font color="#008700"><b>&gt;</b></font>33333333<font color="#008700"><b>&lt;/phoneNumber&gt;</b></font>
+			<font color="#008700"><b>&lt;emailAddress</b></font> <font color="#878700">type=</font><font color="#AF0000">&quot;str&quot;</font><font color="#008700"><b>&gt;</b></font>denial.roast@learningcontainer.com<font color="#008700"><b>&lt;/emailAddress&gt;</b></font>
+		<font color="#008700"><b>&lt;/item&gt;</b></font>
+		<font color="#008700"><b>&lt;item</b></font> <font color="#878700">type=</font><font color="#AF0000">&quot;dict&quot;</font><font color="#008700"><b>&gt;</b></font>
+			<font color="#008700"><b>&lt;userId</b></font> <font color="#878700">type=</font><font color="#AF0000">&quot;int&quot;</font><font color="#008700"><b>&gt;</b></font>4<font color="#008700"><b>&lt;/userId&gt;</b></font>
+			<font color="#008700"><b>&lt;firstName</b></font> <font color="#878700">type=</font><font color="#AF0000">&quot;str&quot;</font><font color="#008700"><b>&gt;</b></font>devid<font color="#008700"><b>&lt;/firstName&gt;</b></font>
+			<font color="#008700"><b>&lt;lastName</b></font> <font color="#878700">type=</font><font color="#AF0000">&quot;str&quot;</font><font color="#008700"><b>&gt;</b></font>neo<font color="#008700"><b>&lt;/lastName&gt;</b></font>
+			<font color="#008700"><b>&lt;phoneNumber</b></font> <font color="#878700">type=</font><font color="#AF0000">&quot;str&quot;</font><font color="#008700"><b>&gt;</b></font>222222222<font color="#008700"><b>&lt;/phoneNumber&gt;</b></font>
+			<font color="#008700"><b>&lt;emailAddress</b></font> <font color="#878700">type=</font><font color="#AF0000">&quot;str&quot;</font><font color="#008700"><b>&gt;</b></font>devid.neo@learningcontainer.com<font color="#008700"><b>&lt;/emailAddress&gt;</b></font>
+		<font color="#008700"><b>&lt;/item&gt;</b></font>
+		<font color="#008700"><b>&lt;item</b></font> <font color="#878700">type=</font><font color="#AF0000">&quot;dict&quot;</font><font color="#008700"><b>&gt;</b></font>
+			<font color="#008700"><b>&lt;userId</b></font> <font color="#878700">type=</font><font color="#AF0000">&quot;int&quot;</font><font color="#008700"><b>&gt;</b></font>5<font color="#008700"><b>&lt;/userId&gt;</b></font>
+			<font color="#008700"><b>&lt;firstName</b></font> <font color="#878700">type=</font><font color="#AF0000">&quot;str&quot;</font><font color="#008700"><b>&gt;</b></font>jone<font color="#008700"><b>&lt;/firstName&gt;</b></font>
+			<font color="#008700"><b>&lt;lastName</b></font> <font color="#878700">type=</font><font color="#AF0000">&quot;str&quot;</font><font color="#008700"><b>&gt;</b></font>mac<font color="#008700"><b>&lt;/lastName&gt;</b></font>
+			<font color="#008700"><b>&lt;phoneNumber</b></font> <font color="#878700">type=</font><font color="#AF0000">&quot;str&quot;</font><font color="#008700"><b>&gt;</b></font>111111111<font color="#008700"><b>&lt;/phoneNumber&gt;</b></font>
+			<font color="#008700"><b>&lt;emailAddress</b></font> <font color="#878700">type=</font><font color="#AF0000">&quot;str&quot;</font><font color="#008700"><b>&gt;</b></font>jone.mac@learningcontainer.com<font color="#008700"><b>&lt;/emailAddress&gt;</b></font>
+		<font color="#008700"><b>&lt;/item&gt;</b></font>
+	<font color="#008700"><b>&lt;/users&gt;</b></font>
+<font color="#008700"><b>&lt;/root&gt;</b></font>
+
+(py3) [me@mtp qic]$ 
+(py3) [me@mtp qic]$ qic -f test/s6.json  _y
+<font color="#0000FF"><b>---</b></font>
+<font color="#008700"><b>users</b></font>:
+- <font color="#008700"><b>emailAddress</b></font>: krish.lee@learningcontainer.com
+  <font color="#008700"><b>firstName</b></font>: Krish
+  <font color="#008700"><b>lastName</b></font>: Lee
+  <font color="#008700"><b>phoneNumber</b></font>: <font color="#AF0000">&apos;123456&apos;</font>
+  <font color="#008700"><b>userId</b></font>: 1
+- <font color="#008700"><b>emailAddress</b></font>: racks.jacson@learningcontainer.com
+  <font color="#008700"><b>firstName</b></font>: racks
+  <font color="#008700"><b>lastName</b></font>: jacson
+  <font color="#008700"><b>phoneNumber</b></font>: <font color="#AF0000">&apos;123456&apos;</font>
+  <font color="#008700"><b>userId</b></font>: 2
+- <font color="#008700"><b>emailAddress</b></font>: denial.roast@learningcontainer.com
+  <font color="#008700"><b>firstName</b></font>: denial
+  <font color="#008700"><b>lastName</b></font>: roast
+  <font color="#008700"><b>phoneNumber</b></font>: <font color="#AF0000">&apos;33333333&apos;</font>
+  <font color="#008700"><b>userId</b></font>: 3
+- <font color="#008700"><b>emailAddress</b></font>: devid.neo@learningcontainer.com
+  <font color="#008700"><b>firstName</b></font>: devid
+  <font color="#008700"><b>lastName</b></font>: neo
+  <font color="#008700"><b>phoneNumber</b></font>: <font color="#AF0000">&apos;222222222&apos;</font>
+  <font color="#008700"><b>userId</b></font>: 4
+- <font color="#008700"><b>emailAddress</b></font>: jone.mac@learningcontainer.com
+  <font color="#008700"><b>firstName</b></font>: jone
+  <font color="#008700"><b>lastName</b></font>: mac
+  <font color="#008700"><b>phoneNumber</b></font>: <font color="#AF0000">&apos;111111111&apos;</font>
+  <font color="#008700"><b>userId</b></font>: 5
+
+(py3) [me@mtp qic]$ 
+(py3) [me@mtp qic]$ qic -f test/s6.json  &apos;_y(_)&apos;
+<font color="#0000FF"><b>---</b></font>
+<font color="#008700"><b>users</b></font>:
+- <font color="#008700"><b>emailAddress</b></font>: krish.lee@learningcontainer.com
+  <font color="#008700"><b>firstName</b></font>: Krish
+  <font color="#008700"><b>lastName</b></font>: Lee
+  <font color="#008700"><b>phoneNumber</b></font>: <font color="#AF0000">&apos;123456&apos;</font>
+  <font color="#008700"><b>userId</b></font>: 1
+- <font color="#008700"><b>emailAddress</b></font>: racks.jacson@learningcontainer.com
+  <font color="#008700"><b>firstName</b></font>: racks
+  <font color="#008700"><b>lastName</b></font>: jacson
+  <font color="#008700"><b>phoneNumber</b></font>: <font color="#AF0000">&apos;123456&apos;</font>
+  <font color="#008700"><b>userId</b></font>: 2
+- <font color="#008700"><b>emailAddress</b></font>: denial.roast@learningcontainer.com
+  <font color="#008700"><b>firstName</b></font>: denial
+  <font color="#008700"><b>lastName</b></font>: roast
+  <font color="#008700"><b>phoneNumber</b></font>: <font color="#AF0000">&apos;33333333&apos;</font>
+  <font color="#008700"><b>userId</b></font>: 3
+- <font color="#008700"><b>emailAddress</b></font>: devid.neo@learningcontainer.com
+  <font color="#008700"><b>firstName</b></font>: devid
+  <font color="#008700"><b>lastName</b></font>: neo
+  <font color="#008700"><b>phoneNumber</b></font>: <font color="#AF0000">&apos;222222222&apos;</font>
+  <font color="#008700"><b>userId</b></font>: 4
+- <font color="#008700"><b>emailAddress</b></font>: jone.mac@learningcontainer.com
+  <font color="#008700"><b>firstName</b></font>: jone
+  <font color="#008700"><b>lastName</b></font>: mac
+  <font color="#008700"><b>phoneNumber</b></font>: <font color="#AF0000">&apos;111111111&apos;</font>
+  <font color="#008700"><b>userId</b></font>: 5
+
+(py3) [me@mtp qic]$ 
+(py3) [me@mtp qic]$ qic -f test/s6.json  &apos;_y(_.users[:2])&apos;
+<font color="#0000FF"><b>---</b></font>
+- <font color="#008700"><b>emailAddress</b></font>: krish.lee@learningcontainer.com
+  <font color="#008700"><b>firstName</b></font>: Krish
+  <font color="#008700"><b>lastName</b></font>: Lee
+  <font color="#008700"><b>phoneNumber</b></font>: <font color="#AF0000">&apos;123456&apos;</font>
+  <font color="#008700"><b>userId</b></font>: 1
+- <font color="#008700"><b>emailAddress</b></font>: racks.jacson@learningcontainer.com
+  <font color="#008700"><b>firstName</b></font>: racks
+  <font color="#008700"><b>lastName</b></font>: jacson
+  <font color="#008700"><b>phoneNumber</b></font>: <font color="#AF0000">&apos;123456&apos;</font>
+  <font color="#008700"><b>userId</b></font>: 2
+
+(py3) [me@mtp qic]$ </pre>
+
+
+## Limit rows 
+
+when the embeded list is huge, we may only want to see a few of them.  \
+slice `[:$n]` can be used for specified list, but `-l $n` apply to all lists included.
+
+<pre>(py3) [me@mtp qic]$ qic -f test/s6.json &apos;_.users&apos; | qic _y
+<font color="#0000FF"><b>---</b></font>
+- <font color="#008700"><b>emailAddress</b></font>: krish.lee@learningcontainer.com
+  <font color="#008700"><b>firstName</b></font>: Krish
+  <font color="#008700"><b>lastName</b></font>: Lee
+  <font color="#008700"><b>phoneNumber</b></font>: <font color="#AF0000">&apos;123456&apos;</font>
+  <font color="#008700"><b>userId</b></font>: 1
+- <font color="#008700"><b>emailAddress</b></font>: racks.jacson@learningcontainer.com
+  <font color="#008700"><b>firstName</b></font>: racks
+  <font color="#008700"><b>lastName</b></font>: jacson
+  <font color="#008700"><b>phoneNumber</b></font>: <font color="#AF0000">&apos;123456&apos;</font>
+  <font color="#008700"><b>userId</b></font>: 2
+- <font color="#008700"><b>emailAddress</b></font>: denial.roast@learningcontainer.com
+  <font color="#008700"><b>firstName</b></font>: denial
+  <font color="#008700"><b>lastName</b></font>: roast
+  <font color="#008700"><b>phoneNumber</b></font>: <font color="#AF0000">&apos;33333333&apos;</font>
+  <font color="#008700"><b>userId</b></font>: 3
+- <font color="#008700"><b>emailAddress</b></font>: devid.neo@learningcontainer.com
+  <font color="#008700"><b>firstName</b></font>: devid
+  <font color="#008700"><b>lastName</b></font>: neo
+  <font color="#008700"><b>phoneNumber</b></font>: <font color="#AF0000">&apos;222222222&apos;</font>
+  <font color="#008700"><b>userId</b></font>: 4
+- <font color="#008700"><b>emailAddress</b></font>: jone.mac@learningcontainer.com
+  <font color="#008700"><b>firstName</b></font>: jone
+  <font color="#008700"><b>lastName</b></font>: mac
+  <font color="#008700"><b>phoneNumber</b></font>: <font color="#AF0000">&apos;111111111&apos;</font>
+  <font color="#008700"><b>userId</b></font>: 5
+
+(py3) [me@mtp qic]$ qic -f test/s6.json -l2 &apos;_.users&apos; | qic _y
+<font color="#33C7DE"># _[] 5 -&gt; 2</font>
+<font color="#0000FF"><b>---</b></font>
+- <font color="#008700"><b>emailAddress</b></font>: krish.lee@learningcontainer.com
+  <font color="#008700"><b>firstName</b></font>: Krish
+  <font color="#008700"><b>lastName</b></font>: Lee
+  <font color="#008700"><b>phoneNumber</b></font>: <font color="#AF0000">&apos;123456&apos;</font>
+  <font color="#008700"><b>userId</b></font>: 1
+- <font color="#008700"><b>emailAddress</b></font>: racks.jacson@learningcontainer.com
+  <font color="#008700"><b>firstName</b></font>: racks
+  <font color="#008700"><b>lastName</b></font>: jacson
+  <font color="#008700"><b>phoneNumber</b></font>: <font color="#AF0000">&apos;123456&apos;</font>
+  <font color="#008700"><b>userId</b></font>: 2
+
+(py3) [me@mtp qic]$ qic -f test/s6.json -l2 &apos;_.users[:2]&apos; 
+[
+  {
+    <font color="#008700"><b>&quot;userId&quot;</b></font>: <font color="#626262">1</font>,
+    <font color="#008700"><b>&quot;firstName&quot;</b></font>: <font color="#AF0000">&quot;Krish&quot;</font>,
+    <font color="#008700"><b>&quot;lastName&quot;</b></font>: <font color="#AF0000">&quot;Lee&quot;</font>,
+    <font color="#008700"><b>&quot;phoneNumber&quot;</b></font>: <font color="#AF0000">&quot;123456&quot;</font>,
+    <font color="#008700"><b>&quot;emailAddress&quot;</b></font>: <font color="#AF0000">&quot;krish.lee@learningcontainer.com&quot;</font>
+  },
+  {
+    <font color="#008700"><b>&quot;userId&quot;</b></font>: <font color="#626262">2</font>,
+    <font color="#008700"><b>&quot;firstName&quot;</b></font>: <font color="#AF0000">&quot;racks&quot;</font>,
+    <font color="#008700"><b>&quot;lastName&quot;</b></font>: <font color="#AF0000">&quot;jacson&quot;</font>,
+    <font color="#008700"><b>&quot;phoneNumber&quot;</b></font>: <font color="#AF0000">&quot;123456&quot;</font>,
+    <font color="#008700"><b>&quot;emailAddress&quot;</b></font>: <font color="#AF0000">&quot;racks.jacson@learningcontainer.com&quot;</font>
+  }
+]
+</pre>
 
 
 
@@ -321,8 +517,5 @@ use `\q` or `quit()` to leave Qic.
 
 
 
-
-
-
-
+... to be continued.
 
