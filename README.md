@@ -1,3 +1,6 @@
+## [doc on github.io](https://walkerever.github.io/)
+
+
 # qic - Query In Console
 
 JSON/YAML/XML comand line query tool with interactive mode.
