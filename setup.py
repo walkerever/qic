@@ -10,7 +10,7 @@ README = (HERE / "README.md").read_text()
 # This call to setup() does all the work
 setup(
     name="qic",
-    version="1.1.2",
+    version="1.1.5",
     description="data(JSON/XML/YAML) command line query tools with interactive mode.",
     long_description=README,
     long_description_content_type="text/markdown",
@@ -21,7 +21,7 @@ setup(
     classifiers=["License :: OSI Approved :: Apache Software License"],
     packages=find_packages(),
     include_package_data=True,
-    install_requires=[ "wcwidth", "pyyaml", "xmltodict", "dicttoxml", "pygments", "prompt_toolkit", ],
+    install_requires=[ "wcwidth", "pyyaml", "xmltodict", "dicttoxml", "pygments", "prompt_toolkit","json_to_html" ],
     keywords=[ "json","yaml","xml","query","jq", "dq", "dsq", "dsquery","qic", "dataquery", "json query", "xml query", "yaml query", "jello", "jq", ],
     entry_points={ "console_scripts": 
         [ 

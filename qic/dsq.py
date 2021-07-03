@@ -13,10 +13,11 @@ from functools import partial
 from .tblfmt import SimpleTable
 from .commandline import commandline
 from .json2table import prepare_table
+from json2html import JsonConverter
 from collections import (deque,defaultdict)
 from types import FunctionType
 from pygments import highlight
-from pygments.lexers import (JsonLexer,YamlLexer,XmlLexer,IniLexer,guess_lexer)
+from pygments.lexers import (JsonLexer,YamlLexer,XmlLexer,IniLexer,HtmlLexer,guess_lexer)
 from pygments.lexers.python import PythonLexer
 from pygments.formatters import Terminal256Formatter
 from prompt_toolkit import PromptSession
@@ -39,6 +40,10 @@ def _yaml(ds) :
     return yaml.dump(ds,default_flow_style=False,explicit_start=True, explicit_end=False)
 def _l(ds,brk="\n") :
     return brk.join([str(i) for i in ds])
+def _h(ds) :
+    return JsonConverter(ds).json2html()
+def _zh(ds) :
+    return JsonConverter(ds,recursive=True,collapseandexpand=True).json2html()
 def _l2t(xjson,header=None,maxcolwidth=100) :
     data,header=prepare_table(xjson,header)
     return SimpleTable(data=data,header=header,maxwidth=maxcolwidth)
@@ -248,6 +253,11 @@ def dsq_main():
             except :
                 pass
             try :
+                xprint(highlight(res,HtmlLexer(),Terminal256Formatter()))
+                return
+            except :
+                pass
+            try :
                 json.loads(res)
                 if _x_args.rows != 2**30 :
                     res = json.loads(res)
@@ -269,16 +279,9 @@ def dsq_main():
                 pass
             try :
                 xmltodict.parse(res)
-                #if _x_args.rows != 2**30 :
-                #    res = xmltodict.parse(res)
-                #    print(json.dumps(res,indent=2))
-                #    res = shrink_list(res)
-                #    print(json.dumps(res,indent=2))
-                #    res = _xml(res)
                 xprint(highlight(res,XmlLexer(),Terminal256Formatter()))
                 return
             except :
-                traceback.print_exc()
                 pass
             xprint(highlight(res,guess_lexer(res),Terminal256Formatter()))
         else :
