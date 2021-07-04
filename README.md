@@ -9,6 +9,17 @@ By design, it tries to keep simple. There're a lot compromises. It's not intendi
 
 This document is available with better format on github.io [QiC](https://laowangv5.github.io/qic/) where colorful text can be used for terminal output.
 
+- [Installation](https://walkerever.github.io/qic#installation)
+- [Basics](https://walkerever.github.io/qic#basics)
+- [Check expanded code](https://walkerever.github.io/qic#check-expanded-code)
+- [Keys with special chars](#keys-with-special-chars)
+- [Interactive mode](#interactive-mode)
+- [Validate/Convert JSON/YAML/XML](#validate-and-convert-jsonxmlyaml)
+- [Limit rows](#limit-rows)
+- [Load extra modules](#load-extra-modules)
+
+----
+
 [![watch a brief on youtube](https://n1.leonawang.com/share/images/qic_eg_2.png)](http://www.youtube.com/watch?v=NBARRnsKnbk)
 
 
@@ -23,7 +34,7 @@ run it
 `qic` or `python -mqic`
 
 ----
-## Baiscs
+## Basics
 
 by default it will validate, reformat and color the JSON stream. 
 
@@ -132,7 +143,7 @@ sildenafil citrate
 
 ----
 
-## check expanded code
+## Check expanded code
 
 <pre>(py3) [me@mtp qic]$ cat test/s1.json | qic  &quot;_[]._id&quot; -X
 <font color="#33C7DE"># run : </font>
@@ -195,7 +206,7 @@ sildenafil citrate
 
 -----
 
-## keys with special chars
+## Keys with special chars
 
 look at below changed JSON, `product_name` is renamed to `product.name`. This will break the dot expansion QiC is using. In this situation, use `<>` to mark content within is a single unit.
 
