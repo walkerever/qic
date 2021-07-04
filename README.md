@@ -9,9 +9,9 @@ By design, it tries to keep simple. There're a lot compromises. It's not intendi
 
 This document is available with better format on github.io [QiC](https://laowangv5.github.io/qic/) where colorful text can be used for terminal output.
 
-- [Installation](https://walkerever.github.io/qic#installation)
-- [Basics](https://walkerever.github.io/qic#basics)
-- [Check expanded code](https://walkerever.github.io/qic#check-expanded-code)
+- [Installation](#installation)
+- [Basics](#basics)
+- [Check expanded code](#check-expanded-code)
 - [Keys with special chars](#keys-with-special-chars)
 - [Interactive mode](#interactive-mode)
 - [Validate/Convert JSON/YAML/XML](#validate-and-convert-jsonxmlyaml)
