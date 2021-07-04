@@ -804,12 +804,12 @@ _zh table,
 
 <tt>
 <table style="border-collapse:collapse;;" border=1 >
-<tr class="parent" id="DLvJNVyrvwldSNCapYeW" title="Click to expand/collapse" style="cursor: pointer;"> <td bgcolor="#FFFFCC">D(1)</td> </tr>
+<tr class="parent" id="DLvJNVyrvwldSNCapYeW" title="Click to expand/collapse" style="cursor: pointer;"> <td bgcolor="#111111">D(1)</td> </tr>
 <tr class="child-DLvJNVyrvwldSNCapYeW">
 <td valign="top"><b>users</b></td>
     <td>
         <table style="border-collapse:collapse;;" border=1 width="100%">
-        <tr class="parent" id="ISMOWRxJylpBVUVUXmVJ" title="Click to expand/collapse" style="cursor: pointer;"> <td bgcolor="#FFFFCC">L(5)</td> </tr>
+        <tr class="parent" id="ISMOWRxJylpBVUVUXmVJ" title="Click to expand/collapse" style="cursor: pointer;"> <td bgcolor="#111111">L(5)</td> </tr>
         <tr class="child-ISMOWRxJylpBVUVUXmVJ" style="background-color:#000000">
             <td valign="top"><b>userId</b></td>
             <td>1</td>
