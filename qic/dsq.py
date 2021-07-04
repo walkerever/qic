@@ -541,6 +541,8 @@ def dsq_main():
     _x_word_completer = WordCompleter(sorted(list(set([x for x in _x_key_dict.keys()]+keys_extra))))
         
     if _x_args.modules :
+        _x_args.modules = os.path.expanduser(_x_args.modules)
+        _x_args.modules = os.path.expandvars(_x_args.modules)
         for m in _x_args.modules.split(",")  :
             if m :
                 m.strip()
@@ -557,6 +559,7 @@ def dsq_main():
                     mpath = os.path.abspath(m) 
                     sys.path.append(m)
                 else :
+                    import importlib
                     globals()[m] = importlib.import_module(m)
 
     def run_as_func(code,_=_) :
