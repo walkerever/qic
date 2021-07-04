@@ -24,6 +24,8 @@ from prompt_toolkit import PromptSession
 from prompt_toolkit.completion import WordCompleter
 from prompt_toolkit.lexers import PygmentsLexer
 
+sys.path.append(os.getcwd())
+
 print = partial(print,flush=True)
 
 DSQ_DOT="_yx_dsq_dot_yx_"
@@ -544,8 +546,18 @@ def dsq_main():
                 m.strip()
                 if m.startswith("from ") :
                     exec(m)
+                elif os.path.isfile(m) :
+                    mpath = os.path.abspath(os.path.dirname(m))
+                    mfile = os.path.basename(m) 
+                    sys.path.append(mpath)
+                    mn = mfile.replace(".py","")
+                    import importlib
+                    globals()[mn] = importlib.import_module(mn)
+                elif os.path.isdir(m) :
+                    mpath = os.path.abspath(m) 
+                    sys.path.append(m)
                 else :
-                    exec("import " + m)
+                    globals()[m] = importlib.import_module(m)
 
     def run_as_func(code,_=_) :
         fname = "".join([random.choice(string.ascii_letters) for _ in range(20)])
