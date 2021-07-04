@@ -529,7 +529,22 @@ slice `[:$n]` can be used for specified list, but `-l $n` apply to all lists inc
 
 
 ##  load extra modules
+load module/class/function from python source files.
 
+<pre><font color="#00AFFF">yonghang</font>@<font color="#FF8700">mtp</font><font color="#00AFFF">~</font> $ cat ~/tmp/tm.py 
+
+def xxlen(ds) :
+    return str(len(ds)) + &quot; : &quot; + str(ds)
+
+<font color="#00AFFF">yonghang</font>@<font color="#FF8700">mtp</font><font color="#00AFFF">~</font> $ curl -s walkerever.com/share/test/json/s6.json | qic -m ~/tmp/tm.py &quot;tm.xxlen(_)&quot;
+1 : {&apos;users&apos;: [{&apos;userId&apos;: 1, &apos;firstName&apos;: &apos;Krish&apos;, &apos;lastName&apos;: &apos;Lee&apos;, &apos;phoneNumber&apos;: &apos;123456&apos;, &apos;emailAddress&apos;: &apos;krish.lee@learningcontainer.com&apos;}, {&apos;userId&apos;: 2, &apos;firstName&apos;: &apos;racks&apos;, &apos;lastName&apos;: &apos;jacson&apos;, &apos;phoneNumber&apos;: &apos;123456&apos;, &apos;emailAddress&apos;: &apos;racks.jacson@learningcontainer.com&apos;}, {&apos;userId&apos;: 3, &apos;firstName&apos;: &apos;denial&apos;, &apos;lastName&apos;: &apos;roast&apos;, &apos;phoneNumber&apos;: &apos;33333333&apos;, &apos;emailAddress&apos;: &apos;denial.roast@learningcontainer.com&apos;}, {&apos;userId&apos;: 4, &apos;firstName&apos;: &apos;devid&apos;, &apos;lastName&apos;: &apos;neo&apos;, &apos;phoneNumber&apos;: &apos;222222222&apos;, &apos;emailAddress&apos;: &apos;devid.neo@learningcontainer.com&apos;}, {&apos;userId&apos;: 5, &apos;firstName&apos;: &apos;jone&apos;, &apos;lastName&apos;: &apos;mac&apos;, &apos;phoneNumber&apos;: &apos;111111111&apos;, &apos;emailAddress&apos;: &apos;jone.mac@learningcontainer.com&apos;}]}
+</pre>
+
+you can load more,
+
+<pre><font color="#00AFFF">yonghang</font>@<font color="#FF8700">mtp</font><font color="#00AFFF">~</font> $ curl -s walkerever.com/share/test/json/s6.json | qic -m ~/tmp/tm.py,json,yaml &quot;tm.xxlen(_)&quot; 
+1 : {&apos;users&apos;: [{&apos;userId&apos;: 1, &apos;firstName&apos;: &apos;Krish&apos;, &apos;lastName&apos;: &apos;Lee&apos;, &apos;phoneNumber&apos;: &apos;123456&apos;, &apos;emailAddress&apos;: &apos;krish.lee@learningcontainer.com&apos;}, {&apos;userId&apos;: 2, &apos;firstName&apos;: &apos;racks&apos;, &apos;lastName&apos;: &apos;jacson&apos;, &apos;phoneNumber&apos;: &apos;123456&apos;, &apos;emailAddress&apos;: &apos;racks.jacson@learningcontainer.com&apos;}, {&apos;userId&apos;: 3, &apos;firstName&apos;: &apos;denial&apos;, &apos;lastName&apos;: &apos;roast&apos;, &apos;phoneNumber&apos;: &apos;33333333&apos;, &apos;emailAddress&apos;: &apos;denial.roast@learningcontainer.com&apos;}, {&apos;userId&apos;: 4, &apos;firstName&apos;: &apos;devid&apos;, &apos;lastName&apos;: &apos;neo&apos;, &apos;phoneNumber&apos;: &apos;222222222&apos;, &apos;emailAddress&apos;: &apos;devid.neo@learningcontainer.com&apos;}, {&apos;userId&apos;: 5, &apos;firstName&apos;: &apos;jone&apos;, &apos;lastName&apos;: &apos;mac&apos;, &apos;phoneNumber&apos;: &apos;111111111&apos;, &apos;emailAddress&apos;: &apos;jone.mac@learningcontainer.com&apos;}]}
+</pre>
 
 
 
