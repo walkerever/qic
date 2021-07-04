@@ -61,7 +61,7 @@ by default it will validate, reformat and color the JSON stream.
 ]
 </pre>
 
-query its conent, \
+query its conent, 
 
 <pre>(py3) [me@mtp qic]$ cat test/s1.json | qic  &quot;_[0]&quot;
 {
