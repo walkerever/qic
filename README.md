@@ -25,7 +25,7 @@ run it
 ----
 ## Baiscs
 
-by default it will validate, reformat and color the JSON stream. \
+by default it will validate, reformat and color the JSON stream. 
 
 "_" means the document root.  This is the default value. 
 
@@ -248,10 +248,13 @@ look at below changed JSON, `product_name` is renamed to `product.name`. This wi
 
 ## Interactive Mode
 
-`-I` enable interactive mode.  \
-Qic will read user input from sys.stdin.  so, for input stream, it could not be from unix pipe, instead use `-f` opiton.   \
-when type `_` , a small menu is promptec all internal functions started with `_`.   \
-Before prompted for user input, all keys in the JSON are stored for word completion prompt -- as you may have noticed, they're case insenstive.
+`-I` enable interactive mode.  
+
+Qic will read user input from sys.stdin.  so, for input stream, it could not be from unix pipe, instead use `-f` opiton.   
+
+when type `_` , a small menu is promptec all internal functions started with `_`.   
+
+Before prompted for user input, all keys in the JSON are stored for word completion prompt -- as you may have noticed, they're case insenstive.  
 
 
 
@@ -316,11 +319,11 @@ use `\q` or `quit()` to leave Qic.
 
 ## Validate and Convert JSON/XML/YAML
 
-without any parameters, feed input into QiC and it will serve as a format validator ( plus foramatter, etc.). \
+without any parameters, feed input into QiC and it will serve as a format validator ( plus foramatter, etc.). 
 
-`-t` specify source as JSON, YAML or XML. here all examples are from JSON format and `JSON` is the default type.  Choose the right one if you're going to working with YAML or XML.  \
+`-t` specify source as JSON, YAML or XML. here all examples are from JSON format and `JSON` is the default type.  Choose the right one if you're going to working with YAML or XML.  
 
-Internal function `_json` or `-j` will dump output as well formatted JSON and this is the default behaviour.   \
+Internal function `_json` or `-j` will dump output as well formatted JSON and this is the default behaviour.   
 
 `_yaml` or `_y` will dump well formatted YAML, while `_xml` or `_x` will dump well formatted XML.
 
@@ -447,8 +450,8 @@ specify them in format of `_x($expr)`, if for full doc, say, `_x(_)`, just use `
 
 ## Limit rows 
 
-when the embeded list is huge, we may only want to see a few of them.  \
-slice `[:$n]` can be used for specified list, but `-l $n` apply to all lists included.
+when the embeded list is huge, we may only want to see a few of them.   
+slice `[:$n]` can be used for specified list, but `-l $n` apply to all lists included.   
 
 <pre>(py3) [me@mtp qic]$ qic -f test/s6.json &apos;_.users&apos; | qic _y
 <font color="#0000FF"><b>---</b></font>
@@ -514,6 +517,7 @@ slice `[:$n]` can be used for specified list, but `-l $n` apply to all lists inc
 
 
 
+##  load extra modules
 
 
 
