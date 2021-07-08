@@ -678,23 +678,23 @@ _h in HTML,
 <td valign="top"><b>users</b></td>
     <td>
         <table style="border-collapse:collapse;;" border=1 width="100%">
-        <tr class="child-xbZJaLZZyftMuMkOmsrF" style="background-color:#FFFFFF">
+        <tr class="child-xbZJaLZZyftMuMkOmsrF" >
             <td valign="top"><b>userId</b></td>
             <td>1</td>
         </tr>
-        <tr class="child-xbZJaLZZyftMuMkOmsrF" style="background-color:#FFFFFF">
+        <tr class="child-xbZJaLZZyftMuMkOmsrF" >
             <td valign="top"><b>firstName</b></td>
             <td>Krish</td>
         </tr>
-        <tr class="child-xbZJaLZZyftMuMkOmsrF" style="background-color:#FFFFFF">
+        <tr class="child-xbZJaLZZyftMuMkOmsrF" >
             <td valign="top"><b>lastName</b></td>
             <td>Lee</td>
         </tr>
-        <tr class="child-xbZJaLZZyftMuMkOmsrF" style="background-color:#FFFFFF">
+        <tr class="child-xbZJaLZZyftMuMkOmsrF" >
             <td valign="top"><b>phoneNumber</b></td>
             <td>123456</td>
         </tr>
-        <tr class="child-xbZJaLZZyftMuMkOmsrF" style="background-color:#FFFFFF">
+        <tr class="child-xbZJaLZZyftMuMkOmsrF" >
             <td valign="top"><b>emailAddress</b></td>
             <td>krish.lee@learningcontainer.com</td>
         </tr>
@@ -718,23 +718,23 @@ _h in HTML,
             <td valign="top"><b>emailAddress</b></td>
             <td>racks.jacson@learningcontainer.com</td>
         </tr>
-        <tr class="child-xbZJaLZZyftMuMkOmsrF" style="background-color:#FFFFFF">
+        <tr class="child-xbZJaLZZyftMuMkOmsrF" >
             <td valign="top"><b>userId</b></td>
             <td>3</td>
         </tr>
-        <tr class="child-xbZJaLZZyftMuMkOmsrF" style="background-color:#FFFFFF">
+        <tr class="child-xbZJaLZZyftMuMkOmsrF" >
             <td valign="top"><b>firstName</b></td>
             <td>denial</td>
         </tr>
-        <tr class="child-xbZJaLZZyftMuMkOmsrF" style="background-color:#FFFFFF">
+        <tr class="child-xbZJaLZZyftMuMkOmsrF" >
             <td valign="top"><b>lastName</b></td>
             <td>roast</td>
         </tr>
-        <tr class="child-xbZJaLZZyftMuMkOmsrF" style="background-color:#FFFFFF">
+        <tr class="child-xbZJaLZZyftMuMkOmsrF" >
             <td valign="top"><b>phoneNumber</b></td>
             <td>33333333</td>
         </tr>
-        <tr class="child-xbZJaLZZyftMuMkOmsrF" style="background-color:#FFFFFF">
+        <tr class="child-xbZJaLZZyftMuMkOmsrF" >
             <td valign="top"><b>emailAddress</b></td>
             <td>denial.roast@learningcontainer.com</td>
         </tr>
@@ -758,23 +758,23 @@ _h in HTML,
             <td valign="top"><b>emailAddress</b></td>
             <td>devid.neo@learningcontainer.com</td>
         </tr>
-        <tr class="child-xbZJaLZZyftMuMkOmsrF" style="background-color:#FFFFFF">
+        <tr class="child-xbZJaLZZyftMuMkOmsrF" >
             <td valign="top"><b>userId</b></td>
             <td>5</td>
         </tr>
-        <tr class="child-xbZJaLZZyftMuMkOmsrF" style="background-color:#FFFFFF">
+        <tr class="child-xbZJaLZZyftMuMkOmsrF" >
             <td valign="top"><b>firstName</b></td>
             <td>jone</td>
         </tr>
-        <tr class="child-xbZJaLZZyftMuMkOmsrF" style="background-color:#FFFFFF">
+        <tr class="child-xbZJaLZZyftMuMkOmsrF" >
             <td valign="top"><b>lastName</b></td>
             <td>mac</td>
         </tr>
-        <tr class="child-xbZJaLZZyftMuMkOmsrF" style="background-color:#FFFFFF">
+        <tr class="child-xbZJaLZZyftMuMkOmsrF" >
             <td valign="top"><b>phoneNumber</b></td>
             <td>111111111</td>
         </tr>
-        <tr class="child-xbZJaLZZyftMuMkOmsrF" style="background-color:#FFFFFF">
+        <tr class="child-xbZJaLZZyftMuMkOmsrF" >
             <td valign="top"><b>emailAddress</b></td>
             <td>jone.mac@learningcontainer.com</td>
         </tr>
@@ -810,23 +810,23 @@ _zh table,
     <td>
         <table style="border-collapse:collapse;;" border=1 width="100%">
         <tr class="parent" id="ISMOWRxJylpBVUVUXmVJ" title="Click to expand/collapse" style="cursor: pointer;"> <td bgcolor="#DDDDDD">L(5)</td> </tr>
-        <tr class="child-ISMOWRxJylpBVUVUXmVJ" style="background-color:#FFFFFF">
+        <tr class="child-ISMOWRxJylpBVUVUXmVJ" >
             <td valign="top"><b>userId</b></td>
             <td>1</td>
         </tr>
-        <tr class="child-ISMOWRxJylpBVUVUXmVJ" style="background-color:#FFFFFF">
+        <tr class="child-ISMOWRxJylpBVUVUXmVJ" >
             <td valign="top"><b>firstName</b></td>
             <td>Krish</td>
         </tr>
-        <tr class="child-ISMOWRxJylpBVUVUXmVJ" style="background-color:#FFFFFF">
+        <tr class="child-ISMOWRxJylpBVUVUXmVJ" >
             <td valign="top"><b>lastName</b></td>
             <td>Lee</td>
         </tr>
-        <tr class="child-ISMOWRxJylpBVUVUXmVJ" style="background-color:#FFFFFF">
+        <tr class="child-ISMOWRxJylpBVUVUXmVJ" >
             <td valign="top"><b>phoneNumber</b></td>
             <td>123456</td>
         </tr>
-        <tr class="child-ISMOWRxJylpBVUVUXmVJ" style="background-color:#FFFFFF">
+        <tr class="child-ISMOWRxJylpBVUVUXmVJ" >
             <td valign="top"><b>emailAddress</b></td>
             <td>krish.lee@learningcontainer.com</td>
         </tr>
@@ -850,23 +850,23 @@ _zh table,
             <td valign="top"><b>emailAddress</b></td>
             <td>racks.jacson@learningcontainer.com</td>
         </tr>
-        <tr class="child-ISMOWRxJylpBVUVUXmVJ" style="background-color:#FFFFFF">
+        <tr class="child-ISMOWRxJylpBVUVUXmVJ" >
             <td valign="top"><b>userId</b></td>
             <td>3</td>
         </tr>
-        <tr class="child-ISMOWRxJylpBVUVUXmVJ" style="background-color:#FFFFFF">
+        <tr class="child-ISMOWRxJylpBVUVUXmVJ" >
             <td valign="top"><b>firstName</b></td>
             <td>denial</td>
         </tr>
-        <tr class="child-ISMOWRxJylpBVUVUXmVJ" style="background-color:#FFFFFF">
+        <tr class="child-ISMOWRxJylpBVUVUXmVJ" >
             <td valign="top"><b>lastName</b></td>
             <td>roast</td>
         </tr>
-        <tr class="child-ISMOWRxJylpBVUVUXmVJ" style="background-color:#FFFFFF">
+        <tr class="child-ISMOWRxJylpBVUVUXmVJ" >
             <td valign="top"><b>phoneNumber</b></td>
             <td>33333333</td>
         </tr>
-        <tr class="child-ISMOWRxJylpBVUVUXmVJ" style="background-color:#FFFFFF">
+        <tr class="child-ISMOWRxJylpBVUVUXmVJ" >
             <td valign="top"><b>emailAddress</b></td>
             <td>denial.roast@learningcontainer.com</td>
         </tr>
@@ -890,23 +890,23 @@ _zh table,
             <td valign="top"><b>emailAddress</b></td>
             <td>devid.neo@learningcontainer.com</td>
         </tr>
-        <tr class="child-ISMOWRxJylpBVUVUXmVJ" style="background-color:#FFFFFF">
+        <tr class="child-ISMOWRxJylpBVUVUXmVJ" >
             <td valign="top"><b>userId</b></td>
             <td>5</td>
         </tr>
-        <tr class="child-ISMOWRxJylpBVUVUXmVJ" style="background-color:#FFFFFF">
+        <tr class="child-ISMOWRxJylpBVUVUXmVJ" >
             <td valign="top"><b>firstName</b></td>
             <td>jone</td>
         </tr>
-        <tr class="child-ISMOWRxJylpBVUVUXmVJ" style="background-color:#FFFFFF">
+        <tr class="child-ISMOWRxJylpBVUVUXmVJ" >
             <td valign="top"><b>lastName</b></td>
             <td>mac</td>
         </tr>
-        <tr class="child-ISMOWRxJylpBVUVUXmVJ" style="background-color:#FFFFFF">
+        <tr class="child-ISMOWRxJylpBVUVUXmVJ" >
             <td valign="top"><b>phoneNumber</b></td>
             <td>111111111</td>
         </tr>
-        <tr class="child-ISMOWRxJylpBVUVUXmVJ" style="background-color:#FFFFFF">
+        <tr class="child-ISMOWRxJylpBVUVUXmVJ" >
             <td valign="top"><b>emailAddress</b></td>
             <td>jone.mac@learningcontainer.com</td>
         </tr>
