@@ -698,23 +698,23 @@ _h in HTML,
             <td valign="top"><b>emailAddress</b></td>
             <td>krish.lee@learningcontainer.com</td>
         </tr>
-        <tr class="child-xbZJaLZZyftMuMkOmsrF" style="background-color:#F1F1F1">
+        <tr class="child-xbZJaLZZyftMuMkOmsrF" >
             <td valign="top"><b>userId</b></td>
             <td>2</td>
         </tr>
-        <tr class="child-xbZJaLZZyftMuMkOmsrF" style="background-color:#F1F1F1">
+        <tr class="child-xbZJaLZZyftMuMkOmsrF" >
             <td valign="top"><b>firstName</b></td>
             <td>racks</td>
         </tr>
-        <tr class="child-xbZJaLZZyftMuMkOmsrF" style="background-color:#F1F1F1">
+        <tr class="child-xbZJaLZZyftMuMkOmsrF" >
             <td valign="top"><b>lastName</b></td>
             <td>jacson</td>
         </tr>
-        <tr class="child-xbZJaLZZyftMuMkOmsrF" style="background-color:#F1F1F1">
+        <tr class="child-xbZJaLZZyftMuMkOmsrF" >
             <td valign="top"><b>phoneNumber</b></td>
             <td>123456</td>
         </tr>
-        <tr class="child-xbZJaLZZyftMuMkOmsrF" style="background-color:#F1F1F1">
+        <tr class="child-xbZJaLZZyftMuMkOmsrF" >
             <td valign="top"><b>emailAddress</b></td>
             <td>racks.jacson@learningcontainer.com</td>
         </tr>
@@ -738,23 +738,23 @@ _h in HTML,
             <td valign="top"><b>emailAddress</b></td>
             <td>denial.roast@learningcontainer.com</td>
         </tr>
-        <tr class="child-xbZJaLZZyftMuMkOmsrF" style="background-color:#F1F1F1">
+        <tr class="child-xbZJaLZZyftMuMkOmsrF" >
             <td valign="top"><b>userId</b></td>
             <td>4</td>
         </tr>
-        <tr class="child-xbZJaLZZyftMuMkOmsrF" style="background-color:#F1F1F1">
+        <tr class="child-xbZJaLZZyftMuMkOmsrF" >
             <td valign="top"><b>firstName</b></td>
             <td>devid</td>
         </tr>
-        <tr class="child-xbZJaLZZyftMuMkOmsrF" style="background-color:#F1F1F1">
+        <tr class="child-xbZJaLZZyftMuMkOmsrF" >
             <td valign="top"><b>lastName</b></td>
             <td>neo</td>
         </tr>
-        <tr class="child-xbZJaLZZyftMuMkOmsrF" style="background-color:#F1F1F1">
+        <tr class="child-xbZJaLZZyftMuMkOmsrF" >
             <td valign="top"><b>phoneNumber</b></td>
             <td>222222222</td>
         </tr>
-        <tr class="child-xbZJaLZZyftMuMkOmsrF" style="background-color:#F1F1F1">
+        <tr class="child-xbZJaLZZyftMuMkOmsrF" >
             <td valign="top"><b>emailAddress</b></td>
             <td>devid.neo@learningcontainer.com</td>
         </tr>
@@ -804,12 +804,12 @@ _zh table,
 
 <tt>
 <table style="border-collapse:collapse;;" border=1 >
-<tr class="parent" id="DLvJNVyrvwldSNCapYeW" title="Click to expand/collapse" style="cursor: pointer;"> <td bgcolor="#DDDDDD">D(1)</td> </tr>
+<tr class="parent" id="DLvJNVyrvwldSNCapYeW" title="Click to expand/collapse" style="cursor: pointer;"> <td><b>D(1)</b></td> </tr>
 <tr class="child-DLvJNVyrvwldSNCapYeW">
 <td valign="top"><b>users</b></td>
     <td>
         <table style="border-collapse:collapse;;" border=1 width="100%">
-        <tr class="parent" id="ISMOWRxJylpBVUVUXmVJ" title="Click to expand/collapse" style="cursor: pointer;"> <td bgcolor="#DDDDDD">L(5)</td> </tr>
+        <tr class="parent" id="ISMOWRxJylpBVUVUXmVJ" title="Click to expand/collapse" style="cursor: pointer;"> <td><b>L(5)</b></td> </tr>
         <tr class="child-ISMOWRxJylpBVUVUXmVJ" >
             <td valign="top"><b>userId</b></td>
             <td>1</td>
@@ -830,23 +830,23 @@ _zh table,
             <td valign="top"><b>emailAddress</b></td>
             <td>krish.lee@learningcontainer.com</td>
         </tr>
-        <tr class="child-ISMOWRxJylpBVUVUXmVJ" style="background-color:#F1F1F1">
+        <tr class="child-ISMOWRxJylpBVUVUXmVJ" >
             <td valign="top"><b>userId</b></td>
             <td>2</td>
         </tr>
-        <tr class="child-ISMOWRxJylpBVUVUXmVJ" style="background-color:#F1F1F1">
+        <tr class="child-ISMOWRxJylpBVUVUXmVJ" >
             <td valign="top"><b>firstName</b></td>
             <td>racks</td>
         </tr>
-        <tr class="child-ISMOWRxJylpBVUVUXmVJ" style="background-color:#F1F1F1">
+        <tr class="child-ISMOWRxJylpBVUVUXmVJ" >
             <td valign="top"><b>lastName</b></td>
             <td>jacson</td>
         </tr>
-        <tr class="child-ISMOWRxJylpBVUVUXmVJ" style="background-color:#F1F1F1">
+        <tr class="child-ISMOWRxJylpBVUVUXmVJ" >
             <td valign="top"><b>phoneNumber</b></td>
             <td>123456</td>
         </tr>
-        <tr class="child-ISMOWRxJylpBVUVUXmVJ" style="background-color:#F1F1F1">
+        <tr class="child-ISMOWRxJylpBVUVUXmVJ" >
             <td valign="top"><b>emailAddress</b></td>
             <td>racks.jacson@learningcontainer.com</td>
         </tr>
@@ -870,23 +870,23 @@ _zh table,
             <td valign="top"><b>emailAddress</b></td>
             <td>denial.roast@learningcontainer.com</td>
         </tr>
-        <tr class="child-ISMOWRxJylpBVUVUXmVJ" style="background-color:#F1F1F1">
+        <tr class="child-ISMOWRxJylpBVUVUXmVJ" >
             <td valign="top"><b>userId</b></td>
             <td>4</td>
         </tr>
-        <tr class="child-ISMOWRxJylpBVUVUXmVJ" style="background-color:#F1F1F1">
+        <tr class="child-ISMOWRxJylpBVUVUXmVJ" >
             <td valign="top"><b>firstName</b></td>
             <td>devid</td>
         </tr>
-        <tr class="child-ISMOWRxJylpBVUVUXmVJ" style="background-color:#F1F1F1">
+        <tr class="child-ISMOWRxJylpBVUVUXmVJ" >
             <td valign="top"><b>lastName</b></td>
             <td>neo</td>
         </tr>
-        <tr class="child-ISMOWRxJylpBVUVUXmVJ" style="background-color:#F1F1F1">
+        <tr class="child-ISMOWRxJylpBVUVUXmVJ" >
             <td valign="top"><b>phoneNumber</b></td>
             <td>222222222</td>
         </tr>
-        <tr class="child-ISMOWRxJylpBVUVUXmVJ" style="background-color:#F1F1F1">
+        <tr class="child-ISMOWRxJylpBVUVUXmVJ" >
             <td valign="top"><b>emailAddress</b></td>
             <td>devid.neo@learningcontainer.com</td>
         </tr>
