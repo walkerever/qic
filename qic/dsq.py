@@ -162,7 +162,10 @@ def dsq_main():
         supported_platform = plat != 'Pocket PC' and (plat != 'win32' or 'ANSICON' in os.environ)
         is_a_tty = hasattr(sys.stdout, 'isatty') and sys.stdout.isatty()
         m = re.search(r"^xterm",os.environ.get("TERM","n/a"),re.IGNORECASE)
-        ret,out,err = commandline.qx("uname -s")
+        try :
+            ret,out,err = commandline.qx("uname -s")
+        except :
+            return False
         iscygwin = re.search(r"cygwin",out,re.IGNORECASE)
         return (is_a_tty or iscygwin) and (m or supported_platform)
     if not _x_args.plain and not supports_color() :
