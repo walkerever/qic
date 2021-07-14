@@ -168,9 +168,13 @@ def dsq_main():
             return False
         iscygwin = re.search(r"cygwin",out,re.IGNORECASE)
         return (is_a_tty or iscygwin) and (m or supported_platform)
-    if not _x_args.plain and not supports_color() :
-        _x_args.plain = True
-
+    if not _x_args.plain :
+        colored = True
+        if not supports_color() :
+            colored = False
+        if os.environ.get("force_ansicolor","") in ["true","yes","y","1"] :
+            colored = True
+        _x_args.plain = colored
     if _x_args.keys_included :
         _xdt_keys_included = dict()
         for w in  _x_args.keys_included.split(",") :
