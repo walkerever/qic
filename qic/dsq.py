@@ -508,7 +508,22 @@ def dsq_main():
             INPUT = INPUT.strip()
     else : 
         if not _x_args.interactive :
+            import signal
+            TIMEOUT = 1
+            def interrupted(signal, frame):
+                print("# timeout/no input from STDIN detected.",
+                      file=sys.stderr,
+                      flush=True)
+                parser.print_help()
+                sys.exit(0)
+        
+            try :
+                signal.signal(signal.SIGALRM, interrupted)
+                signal.alarm(TIMEOUT)
+            except :
+                pass
             INPUT = sys.stdin.read()
+            signal.alarm(0)
             INPUT = INPUT.strip()
     if not INPUT :
         INPUT = json.dumps({})
