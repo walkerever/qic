@@ -509,7 +509,7 @@ def dsq_main():
     else : 
         if not _x_args.interactive :
             import signal
-            TIMEOUT = 1
+            TIMEOUT = 10
             def interrupted(signal, frame):
                 print("# timeout/no input from STDIN detected.",
                       file=sys.stderr,
