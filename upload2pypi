@@ -1,0 +1,12 @@
+if [[ "$1" == "prod" ]]
+then
+    urlrepo="https://upload.pypi.org/legacy/"
+else
+    urlrepo="https://test.pypi.org/legacy/"
+fi
+
+rm -rf dist/*
+
+set -x
+python3 setup.py sdist  && python3 -mtwine check dist/* && python3 -mtwine upload --repository-url $urlrepo dist/*
+set +x

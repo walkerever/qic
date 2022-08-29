@@ -3,7 +3,7 @@ import argparse
 import os
 import json
 import yaml
-import xmltodict
+#import xmltodict
 import re
 import traceback
 import time
@@ -32,12 +32,12 @@ DSQ_DOT="_yx_dsq_dot_yx_"
 
 def _json(ds) :
     return json.dumps(ds,indent=2,sort_keys=True)
-def _xml(ds) :
-    import xml.dom.minidom as dom
-    import dicttoxml
-    xmlstr = dicttoxml.dicttoxml(ds).decode()
-    xml = dom.parseString(xmlstr)
-    return xml.toprettyxml()
+#def _xml(ds) :
+#    import xml.dom.minidom as dom
+#    import dicttoxml
+#    xmlstr = dicttoxml.dicttoxml(ds).decode()
+#    xml = dom.parseString(xmlstr)
+#    return xml.toprettyxml()
 def _yaml(ds) :
     return yaml.dump(ds,default_flow_style=False,explicit_start=True, explicit_end=False)
 def _l(ds,brk="\n") :
@@ -99,14 +99,14 @@ def _rawstr(ds,last="_"):
 
 _fl=_flatlist
 _j=_json
-_x=_xml
+#_x=_xml
 _y=_yaml
 
 def dsq_main():
     parser = argparse.ArgumentParser()
     parser.add_argument(dest="code", nargs='?', default="_", help="code to compile. may be a file.")
     parser.add_argument("-f", "--infile", dest="infile", help="input file")
-    parser.add_argument("-t", "--srctype", dest="srctype", default="JSON", help="JSON,YAML or XML")
+    parser.add_argument("-t", "--srctype", dest="srctype", default="JSON", help="JSON,YAML")
     parser.add_argument("-i", "--indent", dest="indent", default=4, help="how many spaces for indent. default 4.")
     parser.add_argument("-l", "--rows", dest="rows",type=int, default=2**30, help="use this to shrink each list included. useful for DS including too many records.")
     parser.add_argument("-o", "--output", dest="outfile",default=None,help="write as well as console. ansi color kept.")
@@ -286,12 +286,12 @@ def dsq_main():
                 return
             except :
                 pass
-            try :
-                xmltodict.parse(res)
-                xprint(highlight(res,XmlLexer(),Terminal256Formatter()))
-                return
-            except :
-                pass
+            #try :
+            #    xmltodict.parse(res)
+            #    xprint(highlight(res,XmlLexer(),Terminal256Formatter()))
+            #    return
+            #except :
+            #    pass
             xprint(highlight(res,guess_lexer(res),Terminal256Formatter()))
         else :
             res = cutkeys(res)
@@ -541,8 +541,8 @@ def dsq_main():
             _ = json.loads(INPUT)
        elif _x_args.srctype.upper() == "YAML" :
             _ = yaml.safe_load(INPUT)
-       elif _x_args.srctype.upper() == "XML" :
-            _ = xmltodict.parse(INPUT)
+       #elif _x_args.srctype.upper() == "XML" :
+       #     _ = xmltodict.parse(INPUT)
        else :
         print_err("# unsupported file type.",lvl=2)
         return -1
