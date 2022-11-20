@@ -437,7 +437,7 @@ def dsq_main():
                         if _x_args.debug and w != nw :
                             print_err("# keyword replcement : {} -> {}".format(w,nw),lvl=1)
                     if newchain :
-                        newchain += "['"+ nw + "']"
+                        newchain += ".get('"+ nw + "','')"
                     else :
                         newchain += nw
             res += before + newchain 
